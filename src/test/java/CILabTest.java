@@ -2,6 +2,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.fail;
 
 public class CILabTest {
@@ -19,9 +20,15 @@ public class CILabTest {
     }
 
     @Test
-    public void detectCapitalUseTest1() {
-       fail("Not yet implemented");
+    public void DetectCapitalUse_EmptyString_ReturnsFalse() {
+        // arrange
+        myString.setString("");
 
+        // act
+        boolean result = myString.detectCapitalUse();
+
+        // assert
+        assertFalse(result);
     }
     @Test
     public void detectCapitalUseTest2() {
