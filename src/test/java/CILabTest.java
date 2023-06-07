@@ -2,8 +2,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CILabTest {
 
@@ -30,9 +29,18 @@ public class CILabTest {
         // assert
         assertFalse(result);
     }
+
+
     @Test
-    public void detectCapitalUseTest2() {
-        fail("Not yet implemented");
+    public void DetectCapitalUse_AllCapitalLetters_ReturnsTrue() {
+        // arrange
+        myString.setString("A");
+
+        // act
+        boolean result = myString.detectCapitalUse();
+
+        // assert
+        assertTrue(result);
     }
 
 
