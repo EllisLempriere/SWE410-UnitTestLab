@@ -18,6 +18,18 @@ public class CILabTest {
         myString = null;
     }
 
+
+    @Test
+    public void DetectCapitalUse_NewObject_ReturnsFalse() {
+        // arrange
+
+        // act
+        boolean result = myString.detectCapitalUse();
+
+        // assert
+        assertFalse(result);
+    }
+
     @Test
     public void DetectCapitalUse_EmptyString_ReturnsFalse() {
         // arrange
