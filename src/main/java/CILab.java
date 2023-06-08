@@ -26,6 +26,16 @@ public class CILab implements CILabInterface {
         if (myString.equals(allLower))
             return true;
 
+        boolean oneWord = false;
+        for (int i = 0; i < myString.length(); i++) {
+            if (i == 0 && myString.charAt(i) != ' ')
+                oneWord = true;
+            else if (myString.charAt(i) == ' ' && i != myString.length() - 1 && myString.charAt(i + 1) != ' ')
+                oneWord = false;
+        }
+        if (!oneWord)
+            throw new IllegalArgumentException("String must be one word");
+
         return false;
     }
 
