@@ -18,14 +18,6 @@ public class CILab implements CILabInterface {
         if (myString.length() == 0)
             return false;
 
-        String allUpper = myString.toUpperCase();
-        if (myString.equals(allUpper))
-            return true;
-
-        String allLower = myString.toLowerCase();
-        if (myString.equals(allLower))
-            return true;
-
         boolean oneWord = false;
         for (int i = 0; i < myString.length(); i++) {
             if (i == 0 && myString.charAt(i) != ' ')
@@ -35,6 +27,20 @@ public class CILab implements CILabInterface {
         }
         if (!oneWord)
             throw new IllegalArgumentException("String must be one word");
+
+        String allUpper = myString.toUpperCase();
+        if (myString.equals(allUpper))
+            return true;
+
+        String allLower = myString.toLowerCase();
+        if (myString.equals(allLower))
+            return true;
+
+        String firstChar = myString.substring(0, 1);
+        String restStr = myString.substring(1);
+
+        if (firstChar.toUpperCase().equals(firstChar) && restStr.toLowerCase().equals(restStr))
+            return true;
 
         return false;
     }
