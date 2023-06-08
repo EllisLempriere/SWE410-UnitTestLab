@@ -22,6 +22,10 @@ public class CILab implements CILabInterface {
         if (myString.equals(allUpper))
             return true;
 
+        String allLower = myString.toLowerCase();
+        if (myString.equals(allLower))
+            return true;
+
         return false;
     }
 
