@@ -43,6 +43,17 @@ public class CILabTest {
     }
 
 
+    // Making this test as the requirements say "given a string word" implying should only handle single words
+    @Test
+    public void DetectCapitalUse_MultipleWords_ThrowsException() {
+        // arrange
+        myString.setString("Two words");
+
+        // act/assert
+        assertThrows(IllegalArgumentException.class, () -> myString.detectCapitalUse());
+    }
+
+
     @Test
     public void DetectCapitalUse_AllCapitalLetters_ReturnsTrue() {
         // arrange
