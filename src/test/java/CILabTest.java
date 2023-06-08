@@ -56,4 +56,15 @@ public class CILabTest {
     }
 
 
+    @Test
+    public void DetectCapitalUse_NoCapitalLetters_ReturnsTrue() {
+        // arrange
+        myString.setString("a");
+
+        // act
+        boolean result = myString.detectCapitalUse();
+
+        // assert
+        assertTrue(result);
+    }
 }
