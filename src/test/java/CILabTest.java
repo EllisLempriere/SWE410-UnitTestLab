@@ -78,4 +78,17 @@ public class CILabTest {
         // assert
         assertTrue(result);
     }
+
+
+    @Test
+    public void DetectCapitalUse_OnlyFirstLetterCapital_ReturnsTrue() {
+        // arrange
+        myString.setString("Hello");
+
+        // act
+        boolean result = myString.detectCapitalUse();
+
+        // assert
+        assertTrue(result);
+    }
 }
